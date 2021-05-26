@@ -1,0 +1,108 @@
+<html>
+   <head>
+      <link rel="stylesheet" href="gathered_news.css">
+   </head>
+   <body>
+      <header class="ln-header">
+         <div class="ln-header-holder wrapper">
+            <div class="bn-line">
+               <div class="bn-logo">
+                  <a href="https://xn--90adear.xn--p1ai">
+                  <img src="https://xn--90adear.xn--p1ai/assets/img/logos/gibdd.png" alt="">
+                  </a>
+               </div>
+               <div class="bn-logo-name">ГОСАВТОИНСПЕКЦИЯ</div>
+               <div class="bn-logo-text">УВАЖЕНИЕ ПРОФЕССИОНАЛИЗМ БЕЗОПАСНОСТЬ</div>
+               <div class="bn-logo-region b-mobile-section">Сахалинская область</div>
+               <div class="bn-special no-style">
+                  <a href="https://xn--90adear.xn--p1ai/r/65" class="bn-logo-region-2 b-desktop-section">Сахалинская область</a>
+               </div>
+               <ul class="bn-special social no-style"></ul>
+               <div id="map-regions-but" class="bn-map-button"></div>
+               <img class="bn-phone-num" style="position: absolute; right: 200px; top: 62px;" src="https://xn--90adear.xn--p1ai/assets/img/102ru.png">
+            </div>
+         </div>
+      </header>
+      <div class="ln-content-center">
+         <div class="ln-content-holder">
+            <link rel="stylesheet" href="https://xn--90adear.xn--p1ai/media/gibdd/build/css/folder-homepage.css">
+            <div class="tab type-1 folder-homepage">
+               <div class="tab-body">
+                  <div class="active">
+                     <h2>
+                        Новости Госавтоинспекции
+                        по Сахалинской области            
+                     </h2>
+                     <script></script>
+                     <div class="b-news-holder">
+                        <div class="all-news">
+                           <div class="title">
+                              <h3 class="h3">
+                                 <a href="https://xn--90adear.xn--p1ai/r/65/news" class="link-n">Все новости</a>
+                              </h3>
+                           </div>
+                        </div>
+                        <div class="home-news section-list type-3 margin2">
+			    {% for item in news["home_news"] %}
+                               <div class="sl-item">
+                                  <div class="clearfix">
+			               <div class="sl-item-date">{{ item["date"] }}</div>
+                                  </div>
+                                  <div class="sl-item-img">
+                                     <a href="#" rel="news-popup" class="news-popup e-popup"  data-popup-index="12">
+                                         <img src="https://static.mvd.ru/upload/site66/document_news/PHOTO-2021-05-21-11-16-50(2) .jpg" width="100">
+                                     </a>
+                                  </div>
+                                  <div class="sl-item-title">
+				                              <a href="#" rel="news-popup"  class="news-popup   e-popup"  data-popup-index="13">{{ item["title"] }}   </a>
+                                     <div class="sl-item-text">
+			                 {{ item["description"] }}
+                                     </div>
+                                  </div>
+                               </div>
+			    {% endfor %}
+                        </div>
+                     </div>
+                     <link type="text/css" href="https://xn--90adear.xn--p1ai/media/apps/css/news.css" rel="stylesheet">
+                     <div class="b-news-holder">
+                        <div class="all-news">
+                           <div class="title">
+                              <h3 class="h3">
+                                 <a href="https://xn--90adear.xn--p1ai/news/regional" class="link-n">Новости других регионов</a>
+                              </h3>
+                           </div>
+                        </div>
+                        <div class="b-news-holder margin2 clearfix">
+                           <div class="b-news-holder margin2 clearfix">
+                              <div class="news-widget">
+                                 <div id="w-news-1-loader" style="display: none;">
+                                    <div class="loader" id="loader-3-balls"><span></span><span></span><span></span></div>
+                                 </div>
+                                 <div id="w-news-1-list" class="section-list type-3 margin2">
+                                    {% for item in news["regional_news"] %}
+                                        <div class="news-item sl-item clearfix sl-item">
+                                           <div class="sl-item-date">
+				                                       <div class="news-date">{{ item["date"] }} <i class="ico-but b_time"></i> {{ item["time"] }}
+                                               </div>
+                                           </div>
+				                                   <div><a href="#">{{ item["region"] }}    </a></div>
+                                           <div class="sl-item-title">
+                                              <a href="#" rel="news-popup"     class="news-popup e-popup"     data-popup-index="0">{{ item["title"] }}    </a>
+                                              <div class="sl-item-text">
+                                                 <p><em>{{ item["description"] }}    </em></p>
+                                              </div>
+                                           </div>
+                                        </div>
+                                    {% endfor %}
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
